@@ -17,8 +17,6 @@
 
   <!-- Parent Grid  -->
   <body class="grid-container">
-    s
-
     <!-- Header -->
     <header id="main-header">
       <h1 class="title"><span>Web</span>App&trade;</h1>
@@ -35,7 +33,7 @@
         <div class="line"></div>
 
         <div class="rightHead">
-          <img class="headerImg" src="./images/member-1.jpg" alt="" />
+          <img class="headerImg" src="./images/self-two.jpg" alt="" />
           <h4 id="studentName">Taino Dominguez</h4>
         </div>
       </div>
@@ -43,10 +41,12 @@
 
     <!-- Navigation Section -->
     <nav id="main-nav">
-      <a href="#main-header"><img src="./svgs/home.svg" alt="Home Icon" /></a>
+      <a href="index.html"><img src="./svgs/home.svg" alt="Home Icon" /></a>
       <a href="#charts"><img src="./svgs/bar-chart.svg" alt="Chart Icon" /></a>
-      <a href="#members"><img src="./svgs/members.svg" alt="Members Icon" /></a>
-      <a href="#"><img src="./svgs/settings.svg" alt="Settings Icon" /></a>
+      <a href="#social"><img src="./svgs/members.svg" alt="Members Icon" /></a>
+      <a href="#settings"
+        ><img src="./svgs/settings.svg" alt="Settings Icon"
+      /></a>
     </nav>
 
     <!-- Main Section -->
@@ -60,38 +60,40 @@
         <section id="alert"></section>
 
         <!-- Web Traffic Section -->
-        <section id="traffic" class="item-section">
-          <div class="section-header">
-            <h3>Traffic</h3>
-            <ul class="traffic-ul">
-              <li class="traffic-li highlight">Hourly</li>
-              <li class="traffic-li">Daily</li>
-              <li class="traffic-li">Weekly</li>
-              <li class="traffic-li">Monthly</li>
-            </ul>
-          </div>
-          <div class="chart-container">
-            <canvas id="traffic-chart"></canvas>
-          </div>
-        </section>
+        <div id="charts" class="web-traffic-grid-container">
+          <section id="traffic" class="item-section">
+            <div class="section-header">
+              <h3>Traffic</h3>
+              <ul class="traffic-ul">
+                <li class="traffic-li highlight">Hourly</li>
+                <li class="traffic-li">Daily</li>
+                <li class="traffic-li">Weekly</li>
+                <li class="traffic-li">Monthly</li>
+              </ul>
+            </div>
+            <div class="chart-container">
+              <canvas id="traffic-chart"></canvas>
+            </div>
+          </section>
 
-        <section id="daily-traffic" class="item-section">
-          <div class="section-header">
-            <h3>Daily Traffic</h3>
-          </div>
-          <div class="chart-container">
-            <canvas id="daily-traffic-chart"></canvas>
-          </div>
-        </section>
+          <section id="daily-traffic" class="item-section">
+            <div class="section-header">
+              <h3>Daily Traffic</h3>
+            </div>
+            <div class="chart-container">
+              <canvas id="daily-traffic-chart"></canvas>
+            </div>
+          </section>
 
-        <section id="mobile-users" class="item-section">
-          <div class="section-header">
-            <h3>Mobile Users</h3>
-          </div>
-          <div class="chart-container">
-            <canvas id="mobile-chart"></canvas>
-          </div>
-        </section>
+          <section id="mobile-users" class="item-section">
+            <div class="section-header">
+              <h3>Mobile Users</h3>
+            </div>
+            <div class="chart-container">
+              <canvas id="mobile-chart"></canvas>
+            </div>
+          </section>
+        </div>
 
         <!-- Social Section -->
         <section id="social" class="item-section">
@@ -220,8 +222,9 @@
                   Victoria Chambers commented on
                   <span class="bold">WebApp's SEO Tips</span>
                 </p>
+                <p class="activity-time"></p>
               </div>
-              <div class="activity-time"></div>
+              <span class="greater">&gt;</span>
             </div>
 
             <div class="member-container item-section">
@@ -235,8 +238,9 @@
                   Dale Byrd liked the post
                   <span class="bold">Facebook's changes for 2021</span>
                 </p>
+                <p class="activity-time"></p>
               </div>
-              <div class="activity-time"></div>
+              <span class="greater">&gt;</span>
             </div>
 
             <div class="member-container item-section">
@@ -250,8 +254,9 @@
                   Dawn Wood commented on
                   <span class="bold">Facebook's changes for 2021</span>
                 </p>
+                <p class="activity-time"></p>
               </div>
-              <div class="activity-time"></div>
+              <span class="greater">&gt;</span>
             </div>
 
             <div class="member-container item-section">
@@ -264,8 +269,9 @@
                 <p>
                   Dan Oliver posted <span class="bold">WebApp's SEO Tips</span>
                 </p>
+                <p class="activity-time"></p>
               </div>
-              <div class="activity-time"></div>
+              <span class="greater">&gt;</span>
             </div>
           </section>
         </div>
@@ -283,7 +289,7 @@
               class="message-area"
               placeholder="Message for User"
             ></textarea>
-            <button type="submit" class="form-button" id="form-button">
+            <button type="submit" class="form-button btn" id="form-button">
               Send
             </button>
           </form>
@@ -302,9 +308,9 @@
                 <label class="switch-light switch-candy" onclick="">
                   <input type="checkbox" />
 
-                  <span>
-                    <span>Off</span>
-                    <span>On</span>
+                  <span class="parent-span">
+                    <span class="state">Off</span>
+                    <span class="state">On</span>
                     <a></a>
                   </span>
                 </label>
@@ -318,8 +324,8 @@
                   <input type="checkbox" />
 
                   <span>
-                    <span>Off</span>
-                    <span>On</span>
+                    <span class="state">Off</span>
+                    <span class="state">On</span>
                     <a></a>
                   </span>
                 </label>
@@ -348,8 +354,8 @@
           </select>
           <!-- Save and Cancel buttons -->
           <div class="settings-btn">
-            <button class="btn-primary" id="save">Save</button>
-            <button class="btn-disabled" id="cancel">Cancel</button>
+            <button class="btn-primary btn" id="save">Save</button>
+            <button class="btn-disabled btn" id="cancel">Cancel</button>
           </div>
         </section>
       </div>
