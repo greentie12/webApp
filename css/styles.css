@@ -33,7 +33,6 @@
   top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-
   background-color: rgba(118, 111, 175, 0.5); /* Black w/ opacity */
 }
 
@@ -42,11 +41,11 @@
   background-color: #fff;
   color: #333;
   font-size: 1.6rem;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin: 15% auto;
   padding: 1rem;
   border: 1px solid #888;
   border-radius: 5px;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 80%;
 }
 
 /* The Close Button */
@@ -792,6 +791,10 @@ svg {
     padding-right: 1rem;
     margin: 0;
     border-right: 1px solid #6d6d6d;
+  }
+
+  .modal-content {
+    width: 60%;
   }
 
   #message-user.item-section,

@@ -21,6 +21,7 @@ alertMessage.addEventListener("click", (e) => {
 // variable for today's date
 const currentDate = new Date();
 const dateDiv = document.querySelectorAll(".date");
+
 // function to insert current date in dateDiv
 const insertDate = () => {
   dateDiv.forEach((date) => {

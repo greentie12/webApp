@@ -41,3 +41,17 @@ window.addEventListener("click", (e) => {
     modal.style.display = "none";
   }
 });
+
+function nameSearch() {
+  let filter, textVal;
+  const memberName = document.querySelectorAll("#new-members .member-info p");
+
+  filter = user.value.toUpperCase();
+
+  for (let i = 0; i < memberName.length; i++) {
+    textVal = memberName[i].textContent || memberName[i].innerText;
+    if (textVal.toUpperCase().indexOf(filter) > -1) {
+      alert(true);
+    }
+  }
+}
