@@ -18,6 +18,55 @@
     "main";
 }
 
+/* Modal start */
+
+/* The Modal (background) */
+
+#myBtn {
+  display: none;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+
+  background-color: rgba(118, 111, 175, 0.5); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fff;
+  color: #333;
+  font-size: 1.6rem;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 1rem;
+  border: 1px solid #888;
+  border-radius: 5px;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #766faf;
+  float: right;
+  font-size: 2rem;
+  font-weight: bold;
+  overflow: hidden;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal End */
+
 .container {
   width: 90%;
   margin: 0 auto;
@@ -65,6 +114,7 @@ p {
   padding: 0.5rem 1rem;
   height: 80px;
   grid-area: header;
+  z-index: 10;
 }
 
 .right-head-flex {
@@ -335,6 +385,10 @@ svg {
   border-radius: 20px;
 }
 
+.chart-container {
+  width: 80vw;
+}
+
 .item-section {
   border-bottom: 1px solid #bebebe;
   padding: 1.5rem 0;
@@ -372,6 +426,7 @@ svg {
 .social-container .social-svg svg {
   fill: #fff;
   width: 50px;
+  margin: auto;
 }
 
 .social-info p {
@@ -532,11 +587,14 @@ svg {
 
   #main-nav {
     height: 100%;
-    padding-top: 2rem;
+    width: 60px;
+    padding-top: 8rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 2rem;
+    position: fixed;
+    z-index: 1;
   }
 
   .section-header {
@@ -591,9 +649,13 @@ svg {
     padding-left: 1rem;
   }
 
-  #daily-traffic-chart,
-  #mobile-chart {
-    max-height: 400px;
+  #traffic .chart-container {
+    width: 80vw;
+  }
+
+  #daily-traffic .chart-container,
+  #mobile-users .chart-container {
+    width: 40vw;
   }
 
   .social-flex-container {

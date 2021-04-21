@@ -1,5 +1,7 @@
 const alertMessage = document.getElementById("alert");
+const bellNotify = document.querySelector(".notify");
 
+// Alert banner message
 alertMessage.innerHTML = `
 <div id="alert-message">
     <h5><span>Alert: </span>You have<span> 2 </span>unread messages</h5>
@@ -7,15 +9,19 @@ alertMessage.innerHTML = `
 </div>
 `;
 
+// Alert banner event listener to close on click
 alertMessage.addEventListener("click", (e) => {
   const element = e.target;
   if (element.classList.contains("alert-close")) {
     alertMessage.style.display = "none";
+    bellNotify.style.display = "none";
   }
 });
 
+// variable for today's date
 const currentDate = new Date();
 const dateDiv = document.querySelectorAll(".date");
+// function to insert current date in dateDiv
 const insertDate = () => {
   dateDiv.forEach((date) => {
     date.innerHTML = currentDate.toLocaleDateString();
@@ -25,7 +31,7 @@ const insertDate = () => {
 insertDate();
 
 const timeDiv = document.querySelectorAll(".activity-time");
-
+// function to insert a random time for recent activity
 const insertRandomTime = () => {
   timeDiv.forEach((time) => {
     const random = Math.floor(Math.random() * 30);
@@ -41,10 +47,7 @@ const insertRandomTime = () => {
 
 insertRandomTime();
 
-// let trafficChartMobile = document
-//   .getElementById("mobile-chart")
-//   .getContext("2d");
-
+// Line traffic chart
 const trafficCanvas = document.getElementById("traffic-chart");
 
 let trafficData = {
@@ -65,7 +68,10 @@ let trafficData = {
     {
       data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
       backgroundColor: "rgba(116, 119, 191, .3)",
-      borderWidth: 1,
+      fill: true,
+      borderWidth: 2,
+      borderColor: "#9d99b9",
+      label: "# of users",
     },
   ],
 };
@@ -97,8 +103,8 @@ let trafficChart = new Chart(trafficCanvas, {
   options: trafficOptions,
 });
 
+// Bar Daily Traffic Chart
 const dailyCanvas = document.getElementById("daily-traffic-chart");
-
 const dailyData = {
   labels: ["S", "M", "T", "W", "T", "F", "S"],
   datasets: [
@@ -134,6 +140,7 @@ let dailyChart = new Chart(dailyCanvas, {
   options: dailyOptions,
 });
 
+// Doughnut Mobile users chart
 const mobileCanvas = document.getElementById("mobile-chart");
 
 const mobileData = {
@@ -165,46 +172,3 @@ let mobileChart = new Chart(mobileCanvas, {
   data: mobileData,
   options: mobileOptions,
 });
-
-// const data = {
-//   labels: ["Desktop", "Tablet", "Phones"],
-//   datasets: [
-//     {
-//       label: "My First Dataset",
-//       data: [300, 75, 100],
-//       backgroundColor: ["#766faf", "#53be53", "#4ac6ff"],
-//       hoverOffset: 4,
-//     },
-//   ],
-// };
-
-// let trafficChartMobile = document
-//   .getElementById("mobile-chart")
-//   .getContext("2d");
-// let config = new Chart(trafficChartMobile, {
-//   type: "doughnut",
-//   data: data,
-//   clip: { left: 5, top: false, right: -2, bottom: 0 },
-// });
-
-// const DATA_COUNT = 7;
-// const NUMBER_CFG = { count: DATA_COUNT, min: 0, max: 100 };
-
-// const labels = Utils.months({ count: 7 });
-// const data2 = {
-//   labels: labels,
-//   datasets: [
-//     {
-//       label: "Dataset 1",
-//       data: Utils.numbers(NUMBER_CFG),
-//       borderColor: Utils.CHART_COLORS.red,
-//       backgroundColor: Utils.transparentize(Utils.CHART_COLORS.red, 0.5),
-//     },
-//     {
-//       label: "Dataset 2",
-//       data: Utils.numbers(NUMBER_CFG),
-//       borderColor: Utils.CHART_COLORS.blue,
-//       backgroundColor: Utils.transparentize(Utils.CHART_COLORS.blue, 0.5),
-//     },
-//   ],
-// };
