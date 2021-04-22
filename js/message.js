@@ -10,6 +10,8 @@ const message = document.getElementById("message-area");
 const send = document.getElementById("form-button");
 const para = document.createElement("p");
 
+const bellSvg = document.querySelector(".bell-svg");
+
 send.addEventListener("click", (e) => {
   e.preventDefault();
   modal.style.display = "block";
@@ -30,6 +32,25 @@ send.addEventListener("click", (e) => {
   }
 });
 
+let count = 2;
+const bellMessage = () => {
+  if (count > 1) {
+    modal.style.display = "block";
+    para.textContent = `You have a new message from Jay Oliver`;
+    content.appendChild(para);
+    bellNotify.style.display = "none";
+    count--;
+    console.log(count);
+  } else if (count < 1) {
+    para.textContent = `You have no new messages`;
+    content.appendChild(para);
+    bellNotify.style.display = "none";
+    bellSvg.removeEventListener("click", bellMessage);
+  }
+};
+
+bellSvg.addEventListener("click", bellMessage);
+
 // When the user clicks on <span> (x), close the modal
 span.addEventListener("click", () => {
   modal.style.display = "none";
@@ -41,17 +62,3 @@ window.addEventListener("click", (e) => {
     modal.style.display = "none";
   }
 });
-
-function nameSearch() {
-  let filter, textVal;
-  const memberName = document.querySelectorAll("#new-members .member-info p");
-
-  filter = user.value.toUpperCase();
-
-  for (let i = 0; i < memberName.length; i++) {
-    textVal = memberName[i].textContent || memberName[i].innerText;
-    if (textVal.toUpperCase().indexOf(filter) > -1) {
-      alert(true);
-    }
-  }
-}

@@ -1,6 +1,8 @@
 const alertMessage = document.getElementById("alert");
 const bellNotify = document.querySelector(".notify");
 
+
+
 // Alert banner message
 alertMessage.innerHTML = `
 <div id="alert-message">
