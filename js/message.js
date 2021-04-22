@@ -32,20 +32,38 @@ send.addEventListener("click", (e) => {
   }
 });
 
-let count = 2;
+let messageCount = 2;
+
 const bellMessage = () => {
-  if (count > 1) {
+  if (messageCount >= 2) {
+    modal.style.display = "block";
+    para.textContent = `You have requested to change your password. If this request wasn't initiated by you please contact customer service.`;
+    content.appendChild(para);
+    messageCount--;
+    alertMessage.innerHTML = `
+      <div id="alert-message">
+        <h5><span>Alert: </span>You have<span> ${messageCount} </span>unread messages</h5>
+        <i class="fas fa-times alert-close"></i>
+      </div>
+    `;
+  } else if (messageCount > 0) {
     modal.style.display = "block";
     para.textContent = `You have a new message from Jay Oliver`;
     content.appendChild(para);
     bellNotify.style.display = "none";
-    count--;
-    console.log(count);
-  } else if (count < 1) {
-    para.textContent = `You have no new messages`;
+    messageCount--;
+    alertMessage.innerHTML = `
+      <div id="alert-message">
+        <h5><span>Alert: </span>You have<span> ${messageCount} </span>unread messages</h5>
+        <i class="fas fa-times alert-close"></i>
+      </div>
+    `;
+    alertMessage.style.display = "none";
+  } else if (messageCount <= 0) {
+    modal.style.display = "block";
+    para.textContent = `You have a no new messages`;
     content.appendChild(para);
-    bellNotify.style.display = "none";
-    bellSvg.removeEventListener("click", bellMessage);
+    alertMessage.style.display = "none";
   }
 };
 

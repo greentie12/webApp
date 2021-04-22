@@ -1,12 +1,10 @@
 const alertMessage = document.getElementById("alert");
 const bellNotify = document.querySelector(".notify");
 
-
-
 // Alert banner message
 alertMessage.innerHTML = `
 <div id="alert-message">
-    <h5><span>Alert: </span>You have<span> 2 </span>unread messages</h5>
+    <h5><span>Alert: </span>You have<span> ${messageCount} </span>unread messages</h5>
     <i class="fas fa-times alert-close"></i>
 </div>
 `;
@@ -16,7 +14,6 @@ alertMessage.addEventListener("click", (e) => {
   const element = e.target;
   if (element.classList.contains("alert-close")) {
     alertMessage.style.display = "none";
-    bellNotify.style.display = "none";
   }
 });
 
