@@ -1,7 +1,30 @@
+const trafficLi = document.querySelectorAll(".traffic-li");
+
+trafficLi.forEach((list) => {
+  list.addEventListener("click", (e) => {
+    let listItem = e.target;
+    if (!listItem.classList.contains("highlight")) {
+      trafficLi.forEach((list) => {
+        list.classList.remove("highlight");
+      });
+      listItem.classList.add("highlight");
+
+      if (listItem.textContent === "Daily") {
+        hourlyChart.destroy();
+        new Chart(trafficCanvas, {
+          type: "line",
+          data: trafficDataDaily,
+          options: trafficOptions,
+        });
+      }
+    }
+  });
+});
+
 // Line traffic chart
 const trafficCanvas = document.getElementById("traffic-chart");
 
-let trafficData = {
+let trafficDataHourly = {
   labels: [
     "16-22",
     "23-29",
@@ -18,6 +41,58 @@ let trafficData = {
   datasets: [
     {
       data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
+      backgroundColor: "rgba(116, 119, 191, .3)",
+      fill: true,
+      borderWidth: 2,
+      borderColor: "#9d99b9",
+      label: "# of users",
+    },
+  ],
+};
+
+let trafficDataDaily = {
+  labels: [
+    "16-22",
+    "23-29",
+    "30-5",
+    "6-12",
+    "13-19",
+    "20-26",
+    "27-3",
+    "4-10",
+    "11-17",
+    "18-24",
+    "25-31",
+  ],
+  datasets: [
+    {
+      data: [650, 950, 870, 1800, 1200, 1250, 1550, 1150, 2050, 1900, 2100],
+      backgroundColor: "rgba(116, 119, 191, .3)",
+      fill: true,
+      borderWidth: 2,
+      borderColor: "#9d99b9",
+      label: "# of users",
+    },
+  ],
+};
+
+let trafficDataWeekly = {
+  labels: [
+    "16-22",
+    "23-29",
+    "30-5",
+    "6-12",
+    "13-19",
+    "20-26",
+    "27-3",
+    "4-10",
+    "11-17",
+    "18-24",
+    "25-31",
+  ],
+  datasets: [
+    {
+      data: [1050, 1450, 1400, 1100, 1900, 1000, 1350, 1550, 2150, 1520, 2200],
       backgroundColor: "rgba(116, 119, 191, .3)",
       fill: true,
       borderWidth: 2,
@@ -48,9 +123,9 @@ let trafficOptions = {
   },
 };
 
-let trafficChart = new Chart(trafficCanvas, {
+let hourlyChart = new Chart(trafficCanvas, {
   type: "line",
-  data: trafficData,
+  data: trafficDataHourly,
   options: trafficOptions,
 });
 

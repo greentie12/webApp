@@ -286,6 +286,7 @@ svg {
   width: 35px;
   justify-self: center;
   cursor: pointer;
+  overflow: hidden;
 }
 
 #main {
