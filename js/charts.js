@@ -10,12 +10,73 @@ trafficLi.forEach((list) => {
       listItem.classList.add("highlight");
 
       if (listItem.textContent === "Daily") {
-        hourlyChart.destroy();
-        new Chart(trafficCanvas, {
-          type: "line",
-          data: trafficDataDaily,
-          options: trafficOptions,
+        hourlyChart.data.datasets.forEach((dataset) => {
+          dataset.data = [
+            850,
+            1300,
+            1400,
+            2200,
+            1300,
+            2150,
+            1950,
+            2850,
+            2950,
+            1900,
+            2900,
+          ];
         });
+        hourlyChart.update();
+      } else if (listItem.textContent === "Weekly") {
+        hourlyChart.data.datasets.forEach((dataset) => {
+          dataset.data = [
+            1850,
+            2400,
+            3000,
+            3200,
+            2650,
+            3250,
+            2850,
+            3850,
+            3850,
+            3500,
+            3800,
+          ];
+        });
+        hourlyChart.update();
+      } else if (listItem.textContent === "Monthly") {
+        hourlyChart.data.datasets.forEach((dataset) => {
+          dataset.data = [
+            2850,
+            2900,
+            3200,
+            3600,
+            2950,
+            3950,
+            2950,
+            3950,
+            4050,
+            4500,
+            4800,
+          ];
+        });
+        hourlyChart.update();
+      } else {
+        hourlyChart.data.datasets.forEach((dataset) => {
+          dataset.data = [
+            750,
+            1250,
+            1000,
+            2000,
+            1500,
+            1750,
+            1250,
+            1850,
+            2250,
+            1500,
+            2500,
+          ];
+        });
+        hourlyChart.update();
       }
     }
   });
@@ -41,58 +102,6 @@ let trafficDataHourly = {
   datasets: [
     {
       data: [750, 1250, 1000, 2000, 1500, 1750, 1250, 1850, 2250, 1500, 2500],
-      backgroundColor: "rgba(116, 119, 191, .3)",
-      fill: true,
-      borderWidth: 2,
-      borderColor: "#9d99b9",
-      label: "# of users",
-    },
-  ],
-};
-
-let trafficDataDaily = {
-  labels: [
-    "16-22",
-    "23-29",
-    "30-5",
-    "6-12",
-    "13-19",
-    "20-26",
-    "27-3",
-    "4-10",
-    "11-17",
-    "18-24",
-    "25-31",
-  ],
-  datasets: [
-    {
-      data: [650, 950, 870, 1800, 1200, 1250, 1550, 1150, 2050, 1900, 2100],
-      backgroundColor: "rgba(116, 119, 191, .3)",
-      fill: true,
-      borderWidth: 2,
-      borderColor: "#9d99b9",
-      label: "# of users",
-    },
-  ],
-};
-
-let trafficDataWeekly = {
-  labels: [
-    "16-22",
-    "23-29",
-    "30-5",
-    "6-12",
-    "13-19",
-    "20-26",
-    "27-3",
-    "4-10",
-    "11-17",
-    "18-24",
-    "25-31",
-  ],
-  datasets: [
-    {
-      data: [1050, 1450, 1400, 1100, 1900, 1000, 1350, 1550, 2150, 1520, 2200],
       backgroundColor: "rgba(116, 119, 191, .3)",
       fill: true,
       borderWidth: 2,
