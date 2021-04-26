@@ -295,8 +295,10 @@
             </div>
           </div>
 
-          <form id="message-form">
-            <input type="text" id="userInput" placeholder="Search for User" />
+          <form autocomplete="off" id="message-form">
+            <div class="autocomplete">
+              <input type="text" id="userInput" placeholder="Search for User" />
+            </div>
             <textarea
               id="message-area"
               class="message-area"
