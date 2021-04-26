@@ -1,4 +1,4 @@
-const activeMemebers = [
+const activeMembers = [
   { firstName: "Beatrix", lastName: "Potter" },
   { firstName: "Ann", lastName: "Martin" },
   { firstName: "Beverly", lastName: "Cleary" },
@@ -28,8 +28,8 @@ const activeMemebers = [
 ];
 let fullActiveMembers;
 
-fullActiveMembers = activeMemebers.map(
-  (activeMemebers) => `${activeMemebers.firstName} ${activeMemebers.lastName}`
+fullActiveMembers = activeMembers.map(
+  (activeMembers) => `${activeMembers.firstName} ${activeMembers.lastName}`
 );
 
 const members = document.querySelectorAll("#new-members .member-info p");
