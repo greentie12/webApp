@@ -436,7 +436,7 @@ svg {
 
 .social-info p:nth-child(2) {
   font-size: 3.5rem;
-  color: #6d6d6d;
+  color: #bebebe;
   font-weight: 300;
 }
 
@@ -498,7 +498,6 @@ svg {
   border-bottom: none;
   border-top: none;
   z-index: 99;
-  /*position the autocomplete items to be the same width as the container:*/
   top: 100%;
   left: 0;
   right: 0;
@@ -560,10 +559,6 @@ svg {
   gap: 1rem;
   margin-bottom: 2rem;
 }
-
-/* .toggle-button span.off {
-  display: none;
-} */
 
 .switch-light span {
   font-size: 1.2rem;
@@ -677,7 +672,7 @@ svg {
   }
 
   #daily-traffic {
-    border-right: 1px solid #818181;
+    border-right: 1px solid #bebebe;
   }
 
   #mobile-users .section-header h3 {
@@ -788,7 +783,7 @@ svg {
 
   #daily-traffic,
   #mobile-users {
-    border-top: 1px solid #6d6d6d;
+    border-top: 1px solid #bebebe;
   }
 
   .members-activity-container {
@@ -800,13 +795,13 @@ svg {
   }
 
   .member-container {
-    border: 1px solid #6d6d6d;
+    border: 1px solid #bebebe;
     height: 250px;
     border-bottom: none;
   }
 
   .member-container:last-child {
-    border-bottom: 1px solid #6d6d6d;
+    border-bottom: 1px solid #bebebe;
   }
 
   #new-members .member-container {
@@ -839,7 +834,7 @@ svg {
     width: 100%;
     padding-right: 1rem;
     margin: 0;
-    border-right: 1px solid #6d6d6d;
+    border-right: 1px solid #bebebe;
   }
 
   .modal-content {
