@@ -321,7 +321,7 @@
               <p>Send Email Notfications</p>
               <div class="toggle-button">
                 <label class="switch-light switch-ios" onclick="">
-                  <input type="checkbox" />
+                  <input id="checkNotify" type="checkbox" />
 
                   <span class="parent-span">
                     <span class="state">Off</span>
@@ -336,11 +336,11 @@
               <p>Set Profile to Public</p>
               <div class="toggle-button">
                 <label class="switch-light switch-ios" onclick="">
-                  <input type="checkbox" />
+                  <input id="checkPublic" type="checkbox" />
 
                   <span>
                     <span class="state">Off</span>
-                    <span class="state">On</span>
+                    <span aria-checked="true" class="state">On</span>
                     <a></a>
                   </span>
                 </label>
@@ -348,36 +348,36 @@
             </div>
           </div>
           <!-- Timezone -->
-
           <select name="timezone" id="timezone">
             <option disabled selected>Select Timezone</option>
-            <option value="-05:00">
-              Eastern Time (US &amp; Canada), New York, NY
+            <option value="Eastern Time, New York, NY">
+              Eastern Time, New York, NY
             </option>
-            <option value="-01:00">
-              Central Time (US &amp; Canada), Chicago, IL
+            <option value="Central Time, Chicago, IL">
+              Central Time, Chicago, IL
             </option>
-            <option value="-02:00">
-              Mountain Time (US &amp; Canada), Denver, CO
+            <option value="Mountain Time, Denver, CO">
+              Mountain Time, Denver, CO
             </option>
-            <option value="-03:00">
-              Pacific Time (US &amp; Canada) Los Angeles, CA
+            <option value="Pacific Time, Los Angeles, CA">
+              Pacific Time, Los Angeles, CA
             </option>
-
-            <option value="-04:00">Alaska Daylight Time, Alaska</option>
-            <option value="-15:00">Hawaii-Aleutian Time, Hawaii</option>
           </select>
           <!-- Save and Cancel buttons -->
           <div class="settings-btn">
-            <button class="btn-primary btn" id="save">Save</button>
+            <button type="submit" class="btn-primary btn" id="save">
+              Save
+            </button>
             <button class="btn-disabled btn" id="cancel">Cancel</button>
           </div>
         </section>
       </div>
     </main>
+
     <script src="./js/charts.js"></script>
     <script src="./js/member.js"></script>
     <script src="./js/message.js"></script>
     <script src="./js/script.js"></script>
+    <script src="./js/storage.js"></script>
   </body>
 </html>

@@ -561,6 +561,10 @@ svg {
   margin-bottom: 2rem;
 }
 
+/* .toggle-button span.off {
+  display: none;
+} */
+
 .switch-light span {
   font-size: 1.2rem;
 }
