@@ -4,6 +4,7 @@ const timeZoneValue = localStorage.getItem("timezone");
 const timeZone = document.getElementById("timezone");
 const option = timeZone.querySelector("option");
 const submit = document.getElementById("save");
+const cancel = document.getElementById("cancel");
 
 // function to save current checked boolean value of checkNotify to localstorage
 const saveNotify = () => {
@@ -38,6 +39,15 @@ submit.addEventListener("click", () => {
   saveNotify();
   savePublic();
   saveTimeZone();
+  modal.style.display = "block";
+  para.textContent = `Your settings have been saved.`;
+  content.appendChild(para);
+});
+
+cancel.addEventListener("click", () => {
+  location.reload();
+  localStorage.clear();
+
   modal.style.display = "block";
   para.textContent = `Your settings have been saved.`;
   content.appendChild(para);
