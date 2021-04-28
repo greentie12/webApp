@@ -41,7 +41,7 @@
   background-color: #fff;
   color: #333;
   font-size: 1.6rem;
-  margin: 15% auto;
+  margin: 30% auto;
   padding: 1rem;
   border: 1px solid #888;
   border-radius: 5px;
@@ -142,7 +142,7 @@ p {
 }
 
 h1 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 300;
 }
 h1 span {
@@ -150,7 +150,7 @@ h1 span {
 }
 
 .bellIcon {
-  width: 50px;
+  width: 40px;
   position: relative;
   cursor: pointer;
   overflow: hidden;
@@ -297,13 +297,14 @@ svg {
   display: grid;
   grid-template-columns: 1fr 2fr;
   align-items: center;
-  gap: 0.5rem;
-  padding-left: 1rem;
+  gap: 0.4rem;
+  padding-left: 0.5rem;
 }
 
 #dashboard h2 {
   font-weight: 500;
   overflow: hidden;
+  font-size: 1.3rem;
 }
 
 #dash {
@@ -327,6 +328,43 @@ svg {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+#bell-div {
+  height: 300px;
+}
+
+/* width */
+#bell-div::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+#bell-div::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+#bell-div::-webkit-scrollbar-thumb {
+  background: #766faf;
+  border-radius: 10px;
+}
+
+.bell-message {
+  min-height: 150px;
+  padding: 1rem 1rem;
+  display: block;
+  border-bottom: 1px dashed #4b4672;
+  border-spacing: 1rem;
+}
+
+.bell-message h5 {
+  font-size: 1rem;
+}
+
+.bell-message p {
+  font-size: 1rem;
 }
 
 #alert-message h5 {
@@ -373,7 +411,7 @@ svg {
 }
 
 .traffic-li {
-  font-size: 1.2rem;
+  font-size: 1rem;
   letter-spacing: 1px;
   cursor: pointer;
 }
@@ -435,7 +473,7 @@ svg {
 }
 
 .social-info p:nth-child(2) {
-  font-size: 3.5rem;
+  font-size: 3rem;
   color: #bebebe;
   font-weight: 300;
 }
@@ -450,6 +488,10 @@ svg {
 
 #recent-activity {
   grid-area: recent;
+}
+
+#recent-activity .greater {
+  display: none;
 }
 
 #new-members,
@@ -619,6 +661,10 @@ svg {
     max-width: 95%;
   }
 
+  .modal-content {
+    margin: 15% auto;
+  }
+
   #main-nav {
     height: 100%;
     width: 60px;
@@ -629,6 +675,39 @@ svg {
     gap: 2rem;
     position: fixed;
     z-index: 1;
+  }
+
+  #bell-div {
+    height: 200px;
+  }
+
+  /* width */
+  #bell-div::-webkit-scrollbar {
+    width: 20px;
+  }
+
+  .bell-message {
+    min-height: 150px;
+    padding: 1.5rem;
+    display: block;
+    border-bottom: 1px dashed #4b4672;
+    border-spacing: 1rem;
+  }
+
+  .bell-message h5 {
+    font-size: 1.3rem;
+  }
+
+  .bell-message p {
+    font-size: 1.2rem;
+  }
+
+  #dashboard {
+    gap: 0.5rem;
+  }
+
+  #dashboard h2 {
+    font-size: 1.5rem;
   }
 
   .section-header {
@@ -737,7 +816,8 @@ svg {
     padding-right: 1rem;
   }
 
-  .greater {
+  #recent-activity .greater {
+    display: inline-block;
     color: #766faf;
     padding-right: 1rem;
     font-size: 1.6rem;

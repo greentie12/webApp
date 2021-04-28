@@ -33,33 +33,35 @@ send.addEventListener("click", (e) => {
   }
 });
 
-let messageCount = 2;
+let messageCount = 3;
 
 // function to display different messages in the modal and update the alert banner
 const bellMessage = () => {
-  if (messageCount >= 2) {
+  if (messageCount >= 1) {
     modal.style.display = "block";
-    para.textContent = `You have requested to change your password. If this request wasn't initiated by you please contact customer service.`;
+    para.innerHTML = `<div id="bell-div">
+    <div class="bell-message">
+    <h5>New Message from WebApp</h5>
+    <p>You have recently requested to change your password. If this request was not made by you or done in error, please contact customer service at webapp@example.com</p>
+    </div>
+    <div class="bell-message">
+    <h5>New Message from Jay Oliver</h5>
+    <p>Did you get the memo about the TPS reports? It's just that we're putting new coversheets on all the TPS reports before they go out now.</p>
+    </div>
+    <div class="bell-message">
+    <h5>New Message from Autumn Dominguez</h5>
+    <p>We just want to take the opportunity to thank you for choosing XYZ as your provider of TPS reports. We are proud of our satisfied clientele and look forward to many years of working together.</p>
+    </div>
+  </div>`;
     content.appendChild(para);
-    messageCount--;
+    messageCount = 0;
     alertMessage.innerHTML = `
       <div id="alert-message">
         <h5><span>Alert: </span>You have<span> ${messageCount} </span>unread messages</h5>
         <i class="fas fa-times alert-close"></i>
       </div>
     `;
-  } else if (messageCount > 0) {
-    modal.style.display = "block";
-    para.textContent = `You have a new message from Jay Oliver`;
-    content.appendChild(para);
     bellNotify.style.display = "none";
-    messageCount--;
-    alertMessage.innerHTML = `
-      <div id="alert-message">
-        <h5><span>Alert: </span>You have<span> ${messageCount} </span>unread messages</h5>
-        <i class="fas fa-times alert-close"></i>
-      </div>
-    `;
   } else if (messageCount <= 0) {
     modal.style.display = "block";
     para.textContent = `You have no new messages`;
