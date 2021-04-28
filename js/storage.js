@@ -45,10 +45,6 @@ submit.addEventListener("click", () => {
 });
 
 cancel.addEventListener("click", () => {
-  location.reload();
   localStorage.clear();
-
-  modal.style.display = "block";
-  para.textContent = `Your settings have been saved.`;
-  content.appendChild(para);
+  location.reload();
 });
